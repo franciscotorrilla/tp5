@@ -1,15 +1,8 @@
-#include <iostream>
-#include "funciones.h"
-using namespace std;
+#include "Funciones.h"
 
-
-int main()
-{
-    Grafo grafo;
-    Grafo *ptrGrafo=&grafo;
-    lecturaArchivo(ptrGrafo);
-    Aeropuerto *ptrAeropuerto;
-    ptrAeropuerto= ptrGrafo->obtenerPrimerAeropuerto();
-    cout << ptrAeropuerto->obtenerCodigo() <<endl;
+int main(){
+    Abb *ptrArbol, arbol;
+    ptrArbol=&arbol;
+    lecturaArchivo(ptrArbol);
+    menu(ptrArbol);
 }
-
