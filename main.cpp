@@ -1,8 +1,20 @@
-#include "Funciones.h"
+#include <iostream>
+#include "funciones.h"
+using namespace std;
 
-int main(){
-    Abb *ptrArbol, arbol;
-    ptrArbol=&arbol;
-    lecturaArchivo(ptrArbol);
-    menu(ptrArbol);
+
+int main()
+{
+    Grafo grafo;
+    Grafo *ptrGrafo=&grafo;
+    lecturaArchivo(ptrGrafo);
+    Aeropuerto *ptrAeropuerto;
+    ptrAeropuerto= ptrGrafo->obtenerPrimerAeropuerto();
+    cout << ptrAeropuerto->obtenerCodigo() <<endl;
+    while (ptrAeropuerto->obtenerSiguienteAeropuerto()){
+        ptrAeropuerto=ptrAeropuerto->obtenerSiguienteAeropuerto();
+        cout <<ptrAeropuerto->obtenerCodigo()<<endl;
+    }
+
 }
+
