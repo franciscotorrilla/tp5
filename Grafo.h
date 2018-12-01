@@ -5,16 +5,13 @@
 class Grafo {
 	//atributos
 	private:
-		Aeropuerto *primerAeropuerto;
+		Aeropuerto* primerAeropuerto;
 
 	public:
 	//metodos
-	Nodo(Tipo* dato);
-	Tipo* obtener();
-	Nodo* obtenerSiguiente();
-	void asignarSiguiente(Nodo* punteroNodo);
-	void asignarDato(Tipo* dato);
-	~Nodo();
+	Grafo(Aeropuerto* primerAeropuerto);
+	Aeropuerto* obtenerPrimerAeropuerto();
+	~Aeropuerto();
 };
 
 #endif // GRAFO_H

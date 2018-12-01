@@ -1,23 +1,14 @@
-#include "Nodo.h"
+#include "Grafo.h"
 
 
-Nodo::Nodo ( Tipo* dato) {
-	this->dato = dato;
-	siguiente = 0;
+Grafo::Grafo (Aeropuerto* primerAeropuerto) {
+	this->primerAeropuerto = primerAeropuerto;
 }
 
-void Nodo::asignarSiguiente ( Nodo* punteroNodo) {
-	siguiente = punteroNodo;
+Aeropuerto* Aeropuerto::obtenerPrimerAeropuerto() {
+	return primerAeropuerto;
 }
 
-Tipo* Nodo::obtener() {
-	return dato;
-}
-
-Nodo* Nodo::obtenerSiguiente(){
-	return siguiente;
-}
-
-Nodo::~Nodo(){
+Aeropuerto::~Aeropuerto(){
     delete dato;
 }
