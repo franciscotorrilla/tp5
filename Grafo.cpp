@@ -22,3 +22,11 @@ Aeropuerto* Grafo::obtenerPrimerAeropuerto() {
 	return primerAeropuerto;
 }
 
+Aeropuerto* Grafo::buscarAeropuerto(string codigo) {
+    Aeropuerto* actual = primerAeropuerto;
+    while(actual) {
+        if(codigo == actual->obtenerCodigo())
+            return actual;
+        else
+            actual = actual->obtenerSiguienteAeropuerto();
+
