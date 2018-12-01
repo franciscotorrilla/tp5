@@ -5,10 +5,7 @@ Grafo::Grafo (Aeropuerto* primerAeropuerto) {
 	this->primerAeropuerto = primerAeropuerto;
 }
 
-Aeropuerto* Aeropuerto::obtenerPrimerAeropuerto() {
+Aeropuerto* Grafo::obtenerPrimerAeropuerto() {
 	return primerAeropuerto;
 }
 
-Aeropuerto::~Aeropuerto(){
-    delete dato;
-}

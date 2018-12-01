@@ -1,15 +1,15 @@
 #include "Aeropuerto.h"
 
 
-Aeropuerto::Aeropuerto (string codigo, datos* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto) {
-	this->codigo = dato;
+Aeropuerto::Aeropuerto (string codigo, dato* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto) {
+	this->codigo = codigo;
 	this->datos = datos;
 	this->primerVuelo = primerVuelo;
 	this->siguienteAeropuerto = siguienteAeropuerto;
 }
 
-Aeropuerto::Aeropuerto (string codigo, datos* datos){
-	this->codigo = dato;
+Aeropuerto::Aeropuerto (string codigo, dato* datos){
+	this->codigo = codigo;
 	this->datos = datos;
 	primerVuelo = 0;
 	siguienteAeropuerto = 0;
@@ -19,7 +19,7 @@ void Aeropuerto::asignarCodigo(string codigo){
 	this->codigo = codigo;
 }
 
-void Aeropuerto::asignarDatos(datos* datos){
+void Aeropuerto::asignarDatos(dato* datos){
 	this->datos = datos;
 }
 
@@ -35,7 +35,7 @@ string Aeropuerto::obtenerCodigo(){
     return codigo;
 }
 
-datos* Aeropuerto::obtenerDatos(){
+dato* Aeropuerto::obtenerDatos(){
     return datos;
 }
 

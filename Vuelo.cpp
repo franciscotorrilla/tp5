@@ -1,11 +1,12 @@
 #include "Vuelo.h"
 
 
-Vuelo::Vuelo (unsigned precio, Aeropuerto* aeropuertoLlegada){
+Vuelo::Vuelo(unsigned precio, Aeropuerto* aeropuertoLlegada){
 	this->precio = precio;
 	this->aeropuertoLlegada = aeropuertoLlegada;
 	siguienteVuelo = 0;
 }
+
 
 void Vuelo::asignarSiguienteVuelo(Vuelo* siguienteVuelo) {
 	this->siguienteVuelo = siguienteVuelo;

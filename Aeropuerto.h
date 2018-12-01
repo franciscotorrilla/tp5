@@ -1,31 +1,35 @@
 #ifndef AEROPUERTO_H
 #define AEROPUERTO_H
+#include <iostream>
 #include "Vuelo.h"
+using namespace std;
 
-struct datos{
+class Vuelo;
+struct dato{
     string nombre;
     string ciudad;
     string pais;
 };
 
+
 class Aeropuerto {
 	//atributos
 	private:
 	    string codigo;
-	    datos* datos;
+	    dato* datos;
 		Vuelo* primerVuelo;
 		Aeropuerto* siguienteAeropuerto;
 
     //metodos
 	public:
-        Aeropuerto(string codigo, datos* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto);
-        Aeropuerto(string codigo, datos* datos);
+        Aeropuerto(string codigo, dato* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto);
+        Aeropuerto(string codigo, dato* datos);
         void asignarCodigo(string codigo);
-        void asignarDatos(datos* datos);
+        void asignarDatos(dato* datos);
         void asignarPrimerVuelo(Vuelo* primerVuelo);
         void asignarSiguienteAeropuerto(Aeropuerto* siguienteAeropuerto);
         string obtenerCodigo();
-        datos* obtenerDatos();
+        dato* obtenerDatos();
         Vuelo* obtenerPrimerVuelo();
         Aeropuerto* obtenerSiguienteAeropuerto();
         ~Aeropuerto();

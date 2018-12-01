@@ -2,6 +2,7 @@
 #define VUELO_H
 #include "Aeropuerto.h"
 
+class Aeropuerto;
 class Vuelo {
 	//atributos
 	private:
