@@ -8,18 +8,26 @@ Aeropuerto::Aeropuerto (string codigo, datos* datos, Vuelo* primerVuelo, Aeropue
 	this->siguienteAeropuerto = siguienteAeropuerto;
 }
 
-Aeropuerto::Aeropuerto (string codigo, datos* datos) {
+Aeropuerto::Aeropuerto (string codigo, datos* datos){
 	this->codigo = dato;
 	this->datos = datos;
 	primerVuelo = 0;
 	siguienteAeropuerto = 0;
 }
 
-void Aeropuerto::asignarPrimerVuelo(Vuelo* primerVuelo) {
+void Aeropuerto::asignarCodigo(string codigo){
+	this->codigo = codigo;
+}
+
+void Aeropuerto::asignarDatos(datos* datos){
+	this->datos = datos;
+}
+
+void Aeropuerto::asignarPrimerVuelo(Vuelo* primerVuelo){
 	this->primerVuelo = primerVuelo;
 }
 
-void Aeropuerto::asignarSiguienteAeropuerto(Aeropuerto* siguienteAeropuerto) {
+void Aeropuerto::asignarSiguienteAeropuerto(Aeropuerto* siguienteAeropuerto){
 	this->siguienteAeropuerto = siguienteAeropuerto;
 }
 

@@ -20,6 +20,8 @@ class Aeropuerto {
 	public:
         Aeropuerto(string codigo, datos* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto);
         Aeropuerto(string codigo, datos* datos);
+        void asignarCodigo(string codigo);
+        void asignarDatos(datos* datos);
         void asignarPrimerVuelo(Vuelo* primerVuelo);
         void asignarSiguienteAeropuerto(Aeropuerto* siguienteAeropuerto);
         string obtenerCodigo();
