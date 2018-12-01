@@ -9,13 +9,13 @@ class Vuelo {
 		Aeropuerto* aeropuertoLlegada;
 		Vuelo* siguienteVuelo;
 
+    //metodos
 	public:
-	//metodos
-	Vuelo(unsigned precio, Aeropuerto* aeropuertoLlegada);
-    void asignarSiguienteVuelo(Vuelo* siguienteVuelo);
-	unsigned obtenerPrecio();
-	Aeropuerto* obtenerAeropuertoLlegada();
-	Vuelo* obtenerSiguienteVuelo();
+        Vuelo(unsigned precio, Aeropuerto* aeropuertoLlegada);
+        void asignarSiguienteVuelo(Vuelo* siguienteVuelo);
+        unsigned obtenerPrecio();
+        Aeropuerto* obtenerAeropuertoLlegada();
+        Vuelo* obtenerSiguienteVuelo();
 };
 
 #endif // VUELO_H

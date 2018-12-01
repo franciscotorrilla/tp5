@@ -7,11 +7,11 @@ class Grafo {
 	private:
 		Aeropuerto* primerAeropuerto;
 
+    //metodos
 	public:
-	//metodos
-	Grafo(Aeropuerto* primerAeropuerto);
-	Aeropuerto* obtenerPrimerAeropuerto();
-	~Aeropuerto();
+        Grafo(Aeropuerto* primerAeropuerto);
+        Aeropuerto* obtenerPrimerAeropuerto();
+        ~Aeropuerto();
 };
 
 #endif // GRAFO_H

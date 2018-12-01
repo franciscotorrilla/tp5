@@ -16,17 +16,17 @@ class Aeropuerto {
 		Vuelo* primerVuelo;
 		Aeropuerto* siguienteAeropuerto;
 
+    //metodos
 	public:
-	//metodos
-	Aeropuerto(string codigo, datos* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto);
-	Aeropuerto(string codigo, datos* datos);
-    void asignarPrimerVuelo(Vuelo* primerVuelo);
-	void asignarSiguienteAeropuerto(Aeropuerto* siguienteAeropuerto);
-	string obtenerCodigo();
-	datos* obtenerDatos();
-	Vuelo* obtenerPrimerVuelo();
-	Aeropuerto* obtenerSiguienteAeropuerto();
-	~Aeropuerto();
+        Aeropuerto(string codigo, datos* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto);
+        Aeropuerto(string codigo, datos* datos);
+        void asignarPrimerVuelo(Vuelo* primerVuelo);
+        void asignarSiguienteAeropuerto(Aeropuerto* siguienteAeropuerto);
+        string obtenerCodigo();
+        datos* obtenerDatos();
+        Vuelo* obtenerPrimerVuelo();
+        Aeropuerto* obtenerSiguienteAeropuerto();
+        ~Aeropuerto();
 };
 
 #endif // AEROPUERTO_H
