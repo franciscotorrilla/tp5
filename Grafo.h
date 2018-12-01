@@ -1,7 +1,6 @@
 #ifndef GRAFO_H
 #define GRAFO_H
 #include "Aeropuerto.h"
-#include "Lista.h"
 
 class Grafo {
 	//atributos
@@ -10,7 +9,8 @@ class Grafo {
 
     //metodos
 	public:
-        Grafo(Aeropuerto* primerAeropuerto);
+        Grafo();
+        void asignarSiguienteAeropuerto(Aeropuerto* aeropuerto);
         Aeropuerto* obtenerPrimerAeropuerto();
 };
 

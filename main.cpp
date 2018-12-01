@@ -1,9 +1,15 @@
 #include <iostream>
-
+#include "funciones.h"
 using namespace std;
+
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    Grafo grafo;
+    Grafo *ptrGrafo=&grafo;
+    lecturaArchivo(ptrGrafo);
+    Aeropuerto *ptrAeropuerto;
+    ptrAeropuerto= ptrGrafo->obtenerPrimerAeropuerto();
+    cout << ptrAeropuerto->obtenerCodigo() <<endl;
 }
+
