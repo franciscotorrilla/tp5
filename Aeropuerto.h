@@ -32,6 +32,7 @@ class Aeropuerto {
         dato* obtenerDatos();
         Vuelo* obtenerPrimerVuelo();
         Aeropuerto* obtenerSiguienteAeropuerto();
+        void asignarVuelo(Vuelo* vuelo);
         ~Aeropuerto();
 };
 

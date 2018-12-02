@@ -47,6 +47,17 @@ Aeropuerto* Aeropuerto::obtenerSiguienteAeropuerto(){
     return siguienteAeropuerto;
 }
 
+void Aeropuerto::asignarVuelo(Vuelo* vuelo){
+    if (!primerVuelo)
+        asignarPrimerVuelo(vuelo);
+    else{
+        Vuelo* vueloActual = primerVuelo;
+        while(vueloActual->obtenerSiguienteVuelo())
+            vueloActual=vueloActual->obtenerSiguienteVuelo();
+        vueloActual->asignarSiguienteVuelo(vuelo);
+    }
+}
+
 Aeropuerto::~Aeropuerto(){
     delete datos;
 }

@@ -43,9 +43,12 @@ void lecturaArchivo(Grafo *ptrGrafo){
         archivo >> costo;
 
         ptrAeropuertoLlegada= new Aeropuerto(claveLlegada,datosLlegada);
+        ptrAeropuertoSalida = new Aeropuerto(claveSalida,datosSalida);
+        ptrGrafo->agregarAeropuertoFinal(ptrAeropuertoSalida);
+        ptrGrafo->agregarAeropuertoFinal(ptrAeropuertoLlegada);
+
         ptrVuelo = new Vuelo(costo,ptrAeropuertoLlegada);
-        ptrAeropuertoSalida = new Aeropuerto(claveSalida,datosSalida,ptrVuelo,ptrAeropuertoLlegada);
-        ptrGrafo->asignarSiguienteAeropuerto(ptrAeropuertoSalida);
+        ptrGrafo->aeropuertoIncluido(claveSalida)->asignarVuelo(ptrVuelo);
     }
 	archivo.close();
 	ptrAeropuertoLlegada=0;

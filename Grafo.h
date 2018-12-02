@@ -10,10 +10,13 @@ class Grafo {
     //metodos
 	public:
         Grafo();
-        void asignarSiguienteAeropuerto(Aeropuerto* aeropuerto);
+        void asignarPrimerAeropuerto(Aeropuerto* aeropuerto);
         Aeropuerto* obtenerPrimerAeropuerto();
-        Aeropuerto* buscarAeropuerto(string codigo);
-        Aeropuerto* aeropuertoIncluido(Aeropuerto* aeropuertoNuevo);
+
+        //pre: recibe un codigo
+        //post: de ser posible devuelve el aeropuerto al que pertenece
+        // ese codigo, sino devuelve el ultimo aeropueto del grafo.
+        Aeropuerto* aeropuertoIncluido(string codigo);
         void agregarAeropuertoFinal(Aeropuerto* aeropuertoNuevo);
 };
 
