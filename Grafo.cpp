@@ -29,4 +29,27 @@ Aeropuerto* Grafo::buscarAeropuerto(string codigo) {
             return actual;
         else
             actual = actual->obtenerSiguienteAeropuerto();
+    }
+}
 
+Aeropuerto* Grafo::aeropuertoIncluido (Aeropuerto* aeropuertoNuevo){
+    if (!primerAeropuerto)
+        return 0;
+    else {
+        Aeropuerto* aeropuertoActual = primerAeropuerto;
+        while (aeropuertoActual->obtenerSiguienteAeropuerto()) {
+            if (aeropuertoActual->obtenerCodigo() == aeropuertoNuevo->obtenerCodigo())
+                return aeropuertoActual;
+            else
+                aeropuertoActual = aeropuertoActual->obtenerSiguienteAeropuerto();
+    }
+    return aeropuertoActual;
+}
+}
+
+
+void Grafo::agregarAeropuertoFinal(Aeropuerto* aeropuertoNuevo){
+    Aeropuerto* actual = aeropuertoIncluido(aeropuertoNuevo);
+    if (actual->obtenerCodigo() != aeropuertoNuevo->obtenerCodigo())
+        actual->asignarSiguienteAeropuerto(aeropuertoNuevo);
+    }

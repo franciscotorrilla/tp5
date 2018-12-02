@@ -13,6 +13,8 @@ class Grafo {
         void asignarSiguienteAeropuerto(Aeropuerto* aeropuerto);
         Aeropuerto* obtenerPrimerAeropuerto();
         Aeropuerto* buscarAeropuerto(string codigo);
+        Aeropuerto* aeropuertoIncluido(Aeropuerto* aeropuertoNuevo);
+        void agregarAeropuertoFinal(Aeropuerto* aeropuertoNuevo);
 };
 
 #endif // GRAFO_H
