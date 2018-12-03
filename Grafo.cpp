@@ -1,5 +1,5 @@
 #include "Grafo.h"
-
+#include <sstream>
 
 Grafo::Grafo(){
 	primerAeropuerto = 0;
@@ -183,7 +183,6 @@ Grafo::~Grafo() {
     Vuelo* auxVuelo = 0;
     while (aeropuertoActual) {
         aux = aeropuertoActual;
-        cout << aux->obtenerCodigo()<<endl;
         aeropuertoActual = aeropuertoActual->obtenerSiguienteAeropuerto();
         while(aux->obtenerPrimerVuelo()){
             auxVuelo = aux->obtenerPrimerVuelo();

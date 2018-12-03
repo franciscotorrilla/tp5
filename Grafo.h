@@ -17,6 +17,7 @@ class Grafo {
         //pre: recibe un codigo
         //post: de ser posible devuelve el aeropuerto al que pertenece
         // ese codigo, sino devuelve el ultimo aeropueto del grafo.
+
         Aeropuerto* aeropuertoIncluido(string codigo);
         void agregarAeropuertoFinal(Aeropuerto* aeropuertoNuevo);
         unsigned obtenerPosicion(string codigo);
