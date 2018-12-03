@@ -75,30 +75,31 @@ unsigned Grafo::obtenerPosicion(string codigo){
 
 void Grafo::rutaMinima(string codigo1, string codigo2){
 
-    unsigned MAX=999999999, pos, posLlegada;
-    string *vecCodigos;
-    unsigned *vecMinimos, *vecActual, i, valorMinimo, ultimoValorMinimo=0;
-    int trasbordos=-1;
+    unsigned MAX=999999999, posValorMinimo, posLlegada, posActual, posSalida;
+    string *vecCodigos, viajeCompleto;
+    unsigned *vecMinimos, *vecActual, *vecTrasbordos, i, valorMinimo;
     vecCodigos= new string[cantidadAeropuertos()];
     incluirCodigos(vecCodigos);
     vecMinimos= new unsigned[cantidadAeropuertos()];
     vecActual= new unsigned[cantidadAeropuertos()];
+    vecTrasbordos= new unsigned[cantidadAeropuertos()];
     Aeropuerto* aeropuertoActual;
     Vuelo* vueloActual;
 
     for(unsigned e=0; e<cantidadAeropuertos(); e++){
         vecMinimos[e]=MAX;
+        vecTrasbordos[e]=MAX;
     }
 
-    pos=obtenerPosicion(codigo1);
-    vecMinimos[pos]=0;
+    posSalida=obtenerPosicion(codigo1);
+    posValorMinimo=posSalida;
+    vecMinimos[posValorMinimo]=0;
     posLlegada=obtenerPosicion(codigo2);
+    posActual=posValorMinimo;
 
     aeropuertoActual= aeropuertoIncluido(codigo1);
 
-    while (pos!=posLlegada){
-
-        trasbordos++;
+    while (posActual!=posLlegada){
 
         // -----INICIALIZO EL VECTOR DE LOS PRECIOS EN MAX----
         for(unsigned e=0; e<cantidadAeropuertos(); e++){
@@ -117,52 +118,63 @@ void Grafo::rutaMinima(string codigo1, string codigo2){
         }
 
 
-        // ----BUSCO EL VALOR MINIMO-----
+        // ---- ACTUALIZA LA LISTA DE VALORES MINIMOS -----
         valorMinimo=MAX;
         for(unsigned e=0; e<cantidadAeropuertos(); e++){
-            if(vecMinimos[e]==MAX){
-                if (vecActual[e]<valorMinimo){
-                    valorMinimo=vecActual[e];
-                    pos=e;
+            if(vecActual[e]+vecMinimos[posActual]<vecMinimos[e]){
+                vecMinimos[e]=vecMinimos[posActual]+vecActual[e];
+                vecTrasbordos[e]=posActual;
+                if (vecMinimos[e]< valorMinimo){
+                    valorMinimo=vecMinimos[e];
+                    posValorMinimo=e;
                 }
             }
         }
-        vecMinimos[pos]=valorMinimo+ultimoValorMinimo;
-        ultimoValorMinimo+=valorMinimo;
+        vecMinimos[vecTrasbordos[posValorMinimo]]=MAX;
+
+        // ---- BUSCO EL VALOR MINIMO QUE TENGA CONEXIONES Q NO SE HAYAN VISTO AUN ----
+        if (posValorMinimo==posActual)
+            vecMinimos[posValorMinimo]=MAX;
+        for(unsigned e=0; e<cantidadAeropuertos(); e++){
+            if (vecMinimos[e]< valorMinimo){
+                valorMinimo=vecMinimos[e];
+                posValorMinimo=e;
+            }
+        }
 
         // ----  SELECCIONO EL AEROPUERTO QUE CORRESPONDE AL     ----
         // ---- ULTIMO VALOR MINIMO PARA CONTINUAR CON EL BUCLE  ----
         aeropuertoActual=primerAeropuerto;
-        for (unsigned e=0; e<pos;e++){
+        for (unsigned e=0; e<posValorMinimo;e++){
             aeropuertoActual = aeropuertoActual->obtenerSiguienteAeropuerto();
         }
+
+        posActual=posValorMinimo;
     }
 
     // ----MUESTRA COMO SE FORMA EL VIAJE COMPLETO Y EL VALOR DEL MISMO ----
 
-    valorMinimo=MAX;
-    cout << "Costo total: " << ultimoValorMinimo <<endl;
-    cout << codigo1 << "-->";
-    for (int e=0; e<=trasbordos; e++){
-
-        for (unsigned e=0; e<cantidadAeropuertos(); e++){
-            if (vecMinimos[e]!=0 && vecMinimos[e]<valorMinimo){
-                valorMinimo= vecMinimos[e];
-                vecMinimos[e]=MAX;
-                pos=e;
-            }
-        }
-        valorMinimo=MAX;
-        if (trasbordos!=e)
-            cout << vecCodigos[pos]<< "-->";
-        else
-            cout << codigo2 <<endl;
+    cout << "Costo total: " << valorMinimo <<endl;
+    viajeCompleto = static_cast<ostringstream*>(&(ostringstream() << vecTrasbordos[posActual]))->str();
+    while (vecTrasbordos[posActual]!=posSalida){
+        posActual=vecTrasbordos[posActual];
+        viajeCompleto += static_cast<ostringstream*>(&(ostringstream() << vecTrasbordos[posActual]))->str();
     }
+    char x;
+    int ix;
+    for(int e=viajeCompleto.length()-1; e>=0; e--){
+        x= viajeCompleto[e];
+        ix = x - '0';
+        cout << vecCodigos[ix]<< "-->";
+    }
+    cout << codigo2<<endl;
 
-    delete[] vecCodigos; vecCodigos=0;
-    delete[] vecMinimos; vecMinimos=0;
-    delete[] vecActual; vecActual=0;
+    delete vecCodigos; vecCodigos=0;
+    delete vecMinimos; vecMinimos=0;
+    delete vecActual; vecActual=0;
+    delete vecTrasbordos; vecTrasbordos=0;
 }
+
 
 Grafo::~Grafo() {
 
