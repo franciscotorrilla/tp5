@@ -7,3 +7,6 @@ LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU IEV Kiev-Zhulhany Ki
 TXL Otto-Lilielenthal Berlin Alemania IEV Kiev-Zhulhany Kiev Ucrania 5
 IEV Kiev-Zhulhany Kiev Ucrania OSA Aeropuerto-Internacional-de-Osaka Osaka Japon 4
 TXL Otto-Lilielenthal Berlin Alemania OSA Aeropuerto-Internacional-de-Osaka Osaka Japon 6
+OSA Aeropuerto-Internacional-de-Osaka Osaka Japon TXL Otto-Lilielenthal Berlin Alemania 15
+IEV Kiev-Zhulhany Kiev Ucrania FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia 7
+FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia EZE Ministro-Pistarini Ezeiza Argentina 3   
