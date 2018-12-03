@@ -1,3 +1,5 @@
-EZE Ministro-Pistarini Ezeiza Argentina LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 32859
-EZE Ministro-Pistarini Ezeiza Argentina FCO Aeropuerto-Internacional-deFiumicino Roma Italia 30277
-FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia TXL Otto-Lilielenthal Berlin Alemania 9193
+EZE Ministro-Pistarini Ezeiza Argentina LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 33
+EZE Ministro-Pistarini Ezeiza Argentina FCO Aeropuerto-Internacional-deFiumicino Roma Italia 30
+FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia TXL Otto-Lilielenthal Berlin Alemania 9
+LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU TXL Otto-Lilielenthal Berlin Alemania 11
+FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 1

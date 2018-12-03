@@ -1,13 +1,5 @@
 #include "Aeropuerto.h"
 
-
-Aeropuerto::Aeropuerto (string codigo, dato* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto) {
-	this->codigo = codigo;
-	this->datos = datos;
-	this->primerVuelo = primerVuelo;
-	this->siguienteAeropuerto = siguienteAeropuerto;
-}
-
 Aeropuerto::Aeropuerto (string codigo, dato* datos){
 	this->codigo = codigo;
 	this->datos = datos;

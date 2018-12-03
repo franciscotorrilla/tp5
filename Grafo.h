@@ -18,6 +18,13 @@ class Grafo {
         // ese codigo, sino devuelve el ultimo aeropueto del grafo.
         Aeropuerto* aeropuertoIncluido(string codigo);
         void agregarAeropuertoFinal(Aeropuerto* aeropuertoNuevo);
+        unsigned obtenerPosicion(string codigo);
+        void rutaMinima(string codigo1, string codigo2);
+
+    private:
+        unsigned cantidadAeropuertos();
+
+        void incluirCodigos(string *vec);
 };
 
 #endif // GRAFO_H

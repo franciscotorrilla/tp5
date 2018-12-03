@@ -22,7 +22,6 @@ class Aeropuerto {
 
     //metodos
 	public:
-        Aeropuerto(string codigo, dato* datos, Vuelo* primerVuelo, Aeropuerto* siguienteAeropuerto);
         Aeropuerto(string codigo, dato* datos);
         void asignarCodigo(string codigo);
         void asignarDatos(dato* datos);
