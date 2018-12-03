@@ -169,10 +169,10 @@ void Grafo::rutaMinima(string codigo1, string codigo2){
     }
     cout << codigo2<<endl;
 
-    delete vecCodigos; vecCodigos=0;
-    delete vecMinimos; vecMinimos=0;
-    delete vecActual; vecActual=0;
-    delete vecTrasbordos; vecTrasbordos=0;
+    delete[] vecCodigos; vecCodigos=0;
+    delete[] vecMinimos; vecMinimos=0;
+    delete[] vecActual; vecActual=0;
+    delete[] vecTrasbordos; vecTrasbordos=0;
 }
 
 
