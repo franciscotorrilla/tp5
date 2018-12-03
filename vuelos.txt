@@ -1,5 +1,9 @@
-EZE Ministro-Pistarini Ezeiza Argentina LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 33
-EZE Ministro-Pistarini Ezeiza Argentina FCO Aeropuerto-Internacional-deFiumicino Roma Italia 30
-FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia TXL Otto-Lilielenthal Berlin Alemania 9
-LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU TXL Otto-Lilielenthal Berlin Alemania 11
-FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 1
+EZE Ministro-Pistarini Ezeiza Argentina LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 10
+EZE Ministro-Pistarini Ezeiza Argentina FCO Aeropuerto-Internacional-deFiumicino Roma Italia 5
+FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU 8
+FCO Aeropuerto-Internacional-de-Fiumicino Roma Italia TXL Otto-Lilielenthal Berlin Alemania 12
+LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU TXL Otto-Lilielenthal Berlin Alemania 6
+LAX Aeropuerto-Internacional-de-losAngeles Los-Angeles EEUU IEV Kiev-Zhulhany Kiev Ucrania 12
+TXL Otto-Lilielenthal Berlin Alemania IEV Kiev-Zhulhany Kiev Ucrania 5
+IEV Kiev-Zhulhany Kiev Ucrania OSA Aeropuerto-Internacional-de-Osaka Osaka Japon 4
+TXL Otto-Lilielenthal Berlin Alemania OSA Aeropuerto-Internacional-de-Osaka Osaka Japon 6
