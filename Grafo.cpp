@@ -62,7 +62,7 @@ void Grafo::incluirCodigos(string *vec){
     }
 }
 
-unsigned Grafo::obtenerPosicion(string codigo){
+int Grafo::obtenerPosicion(string codigo){
 
     Aeropuerto* aeropuertoActual= primerAeropuerto;
     for (unsigned i=0; i<cantidadAeropuertos(); i++){
@@ -75,6 +75,10 @@ unsigned Grafo::obtenerPosicion(string codigo){
 
 void Grafo::rutaMinima(string codigo1, string codigo2){
 
+    if(obtenerPosicion(codigo1) == -1 || obtenerPosicion(codigo2) == -1) {
+        cout<<"No hay conexiones disponibles entre "<<codigo1 <<" y "<< codigo2<<endl;
+        return;
+    }
     unsigned MAX=999999999, posValorMinimo, posLlegada, posActual, posSalida;
     string *vecCodigos, viajeCompleto;
     unsigned *vecMinimos, *vecActual, *vecTrasbordos, i, valorMinimo;
@@ -85,22 +89,19 @@ void Grafo::rutaMinima(string codigo1, string codigo2){
     vecTrasbordos= new unsigned[cantidadAeropuertos()];
     Aeropuerto* aeropuertoActual;
     Vuelo* vueloActual;
-
+    bool continuar = true;
     for(unsigned e=0; e<cantidadAeropuertos(); e++){
         vecMinimos[e]=MAX;
         vecTrasbordos[e]=MAX;
     }
-
     posSalida=obtenerPosicion(codigo1);
     posValorMinimo=posSalida;
     vecMinimos[posValorMinimo]=0;
     posLlegada=obtenerPosicion(codigo2);
     posActual=posValorMinimo;
-
     aeropuertoActual= aeropuertoIncluido(codigo1);
-
-    while (posActual!=posLlegada){
-
+    while (posActual!=posLlegada && continuar ){
+        continuar = false;
         // -----INICIALIZO EL VECTOR DE LOS PRECIOS EN MAX----
         for(unsigned e=0; e<cantidadAeropuertos(); e++){
             vecActual[e]=MAX;
@@ -130,6 +131,7 @@ void Grafo::rutaMinima(string codigo1, string codigo2){
                 }
             }
         }
+
         vecMinimos[vecTrasbordos[posValorMinimo]]=MAX;
 
         // ---- BUSCO EL VALOR MINIMO QUE TENGA CONEXIONES Q NO SE HAYAN VISTO AUN ----
@@ -148,10 +150,17 @@ void Grafo::rutaMinima(string codigo1, string codigo2){
         for (unsigned e=0; e<posValorMinimo;e++){
             aeropuertoActual = aeropuertoActual->obtenerSiguienteAeropuerto();
         }
-
         posActual=posValorMinimo;
-    }
 
+        for(unsigned e=0; e<cantidadAeropuertos(); e++) {
+            if(vecMinimos[e] != MAX)
+                continuar = true;
+        }
+    }
+    if(valorMinimo == MAX) {
+        cout <<"No hay vuelos disponibles entre "<<codigo1 <<" y "<<codigo2<<endl;
+        return;
+    }
     // ----MUESTRA COMO SE FORMA EL VIAJE COMPLETO Y EL VALOR DEL MISMO ----
 
     cout << "Costo total: " << valorMinimo <<endl;
