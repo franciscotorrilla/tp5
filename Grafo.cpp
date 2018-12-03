@@ -13,7 +13,6 @@ void Grafo::asignarPrimerAeropuerto(Aeropuerto* primerAeropuerto) {
 	this->primerAeropuerto = primerAeropuerto;
 }
 
-
 Aeropuerto* Grafo::aeropuertoIncluido (string codigo){
     if (!primerAeropuerto)
         return 0;
@@ -25,22 +24,21 @@ Aeropuerto* Grafo::aeropuertoIncluido (string codigo){
             else
                 aeropuertoActual = aeropuertoActual->obtenerSiguienteAeropuerto();
     }
-    return aeropuertoActual;
+        return aeropuertoActual;
     }
 }
 
-
 void Grafo::agregarAeropuertoFinal(Aeropuerto* aeropuertoNuevo){
     Aeropuerto* actual = aeropuertoIncluido(aeropuertoNuevo->obtenerCodigo());
-    if(actual){
+    if(actual || primerAeropuerto){
         if (actual->obtenerCodigo() != aeropuertoNuevo->obtenerCodigo())
             actual->asignarSiguienteAeropuerto(aeropuertoNuevo);
+        else
+            delete aeropuertoNuevo;
     }
     else
         asignarPrimerAeropuerto(aeropuertoNuevo);
-
     }
-
 
 unsigned Grafo::cantidadAeropuertos(){
     unsigned contador=0;
@@ -72,9 +70,8 @@ unsigned Grafo::obtenerPosicion(string codigo){
             return i;
         aeropuertoActual= aeropuertoActual->obtenerSiguienteAeropuerto();
     }
+    return -1;
 }
-
-
 
 void Grafo::rutaMinima(string codigo1, string codigo2){
 
@@ -162,7 +159,38 @@ void Grafo::rutaMinima(string codigo1, string codigo2){
             cout << codigo2 <<endl;
     }
 
-    delete vecCodigos; vecCodigos=0;
-    delete vecMinimos; vecMinimos=0;
-    delete vecActual; vecActual=0;
+    delete[] vecCodigos; vecCodigos=0;
+    delete[] vecMinimos; vecMinimos=0;
+    delete[] vecActual; vecActual=0;
+}
+
+Grafo::~Grafo() {
+
+    Aeropuerto* aeropuertoActual = primerAeropuerto;
+    Aeropuerto* aux = 0;
+    Vuelo* auxVuelo = 0;
+    while (aeropuertoActual) {
+        aux = aeropuertoActual;
+        cout << aux->obtenerCodigo()<<endl;
+        aeropuertoActual = aeropuertoActual->obtenerSiguienteAeropuerto();
+        while(aux->obtenerPrimerVuelo()){
+            auxVuelo = aux->obtenerPrimerVuelo();
+            aux->asignarPrimerVuelo(aux->obtenerPrimerVuelo()->obtenerSiguienteVuelo());
+            delete auxVuelo;
+        }
+        delete aux;
+    }
+
+}
+
+Aeropuerto* Grafo::obtenerAeropuerto(string codigo) {
+
+    Aeropuerto* actual = primerAeropuerto;
+    while (actual) {
+        if (actual->obtenerCodigo() == codigo)
+            return actual;
+        else
+            actual = actual->obtenerSiguienteAeropuerto();
+    }
+    return actual;
 }
