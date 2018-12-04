@@ -53,3 +53,16 @@ void Aeropuerto::asignarVuelo(Vuelo* vuelo){
 Aeropuerto::~Aeropuerto(){
     delete datos;
 }
+
+
+
+Vuelo* Aeropuerto::buscarVuelo(string codigo) {
+	Vuelo* aux = primerVuelo;
+	while (aux) {
+		if(aux->obtenerAeropuertoLlegada()->obtenerCodigo() == codigo)
+			return aux;
+		else
+			aux = aux->obtenerSiguienteVuelo();
+	}
+	return 0;
+}

@@ -33,12 +33,13 @@ class Grafo {
 
         //pre: recibe el codigo IATA de un aeropuerto
         //pos: devuelve la posicion dentro del grafo del aeropuerto
-        unsigned obtenerPosicion(string codigo);
+        int obtenerPosicion(string codigo);
 
         //pre: recibe un codigo IATA
         //pos: devuelve un puntero al aeropuerto que le pertenece ese codigo
         Aeropuerto* obtenerAeropuerto(string codigo);
 
+		unsigned obtenerPrecio ( string salida, string llegada);
         //pre: recibe el codigo IATA del aeropuerto de partida y del de llegada
         //pos: devuelve, de existir, la ruta de menor costo entre los dos aeropuertos con su costo total
         void rutaMinima(string codigo1, string codigo2);

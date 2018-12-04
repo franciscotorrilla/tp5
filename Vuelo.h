@@ -28,7 +28,7 @@ class Vuelo {
         //pre: -
         //pos: devuelve un puntero al aeropuerto de llegada
         Aeropuerto* obtenerAeropuertoLlegada();
-
+		
         //pre: -
         //pos: devuelve un puntero al siguiente vuelo
         Vuelo* obtenerSiguienteVuelo();

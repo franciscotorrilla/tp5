@@ -214,3 +214,8 @@ Aeropuerto* Grafo::obtenerAeropuerto(string codigo) {
     }
     return actual;
 }
+
+unsigned Grafo::obtenerPrecio ( string salida, string llegada) {
+
+	return obtenerAeropuerto(salida)->buscarVuelo(llegada)->obtenerPrecio();
+}

@@ -55,6 +55,8 @@ class Aeropuerto {
         //pre: -
         //post: devuelve un puntero al primer vuelo del aeropuerto
         Vuelo* obtenerPrimerVuelo();
+		
+		Vuelo* buscarVuelo(string codigo);
 
         //pre: -
         //post: devuelve un puntero al siguiente aeropuerto

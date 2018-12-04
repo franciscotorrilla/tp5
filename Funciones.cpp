@@ -57,35 +57,32 @@ void lecturaArchivo(Grafo *ptrGrafo){
 
 }
 
-/*
-void menu(Grafo *ptrGrafo){
+
+/*void menu(Grafo *ptrGrafo){
 
     char i = '1';
     while (i != '0'){
         cout << "Ingrese 0 para cerrar el menu." <<endl;
-		cout << "Ingrese 1 para consultar por un aeropuerto." <<endl;
-		cout << "Ingrese 2 para dar de alta un nuevo aeropuerto." <<endl;
-		cout << "Ingrese 3 para dar de baja un aeropuerto." <<endl;
-		cout << "Ingrese 4 para mostrar el listado de aeropuertos." <<endl;
+		cout << "Ingrese 1 para mostrar el listado de aeropuertos disponibles." <<endl;
+		cout << "Ingrese 2 para buscar la ruta optima entre dos aeropuertos." <<endl;
+		cout << "Ingrese 3 para ver el listado de vuelos disponibles." <<endl;
 		cin >> i;
         cin.ignore(1024, '\n');
         system("cls");
-		opciones(i, ptrArbol);
+		opciones(i, ptrGrafo);
     	}
-    }
-
+    */
+/*
 void opciones(char i, Grafo *ptrGrafo){
 
     switch (i){
         case '0':
             break;
-        case '1': menuConsulta(ptrArbol);
+        case '1': listarAeropuertos(ptrGrafo);
             break;
-        case '2': darDeAlta(ptrArbol);
+        case '2': darDeAlta(ptrGrafo);
             break;
-        case '3': darDeBaja(ptrArbol);
-            break;
-        case '4': mostrarListado(ptrArbol);
+        case '3': darDeBaja(ptrGrafo);
             break;
         default: cout << "Dato ingresado invalido" << endl;
         }
@@ -108,4 +105,13 @@ void datoAMayuscula(string* dato){
         dato[0][i]=toupper(dato[0][i]);
     }
 }
+
+void listarAeropuertos(Grafo* ptrGrafo){
+    Aeropuerto* actual = ptrGrafo->obtenerPrimerAeropuerto();
+    while (actual){
+    cout << actual->obtenerCodigo()<<endl;
+    actual = actual->obtenerSiguienteAeropuerto();
+     }
+}
+
 

@@ -11,7 +11,7 @@ using namespace std;
 //post: crea el grafo con los datos del archivo
 void lecturaArchivo(Grafo *ptrGrafo);
 
-/*
+
 
 //pre: recibe un puntero al grafo
 //post: muestra en la pantalla el menu de opciones
@@ -21,7 +21,7 @@ void menu(Grafo* ptrGrafo);
 //post: llama a la funcion que corresponde ejecutar
 void opciones(char i,Grafo* ptrGrafo);
 
-*/
+
 
 //pre: recibe un puntero a string
 //post: quita los guiones del string
@@ -31,5 +31,6 @@ void limpiarGuiones(string* dato);
 //post: pone a mayusculas todos los caracteres
 void datoAMayuscula(string* dato);
 
+void listarAeropuertos(Grafo* ptrGrafo);
 
 #endif // FUNCIONES_H_INCLUDED
