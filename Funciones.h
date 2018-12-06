@@ -31,6 +31,12 @@ void limpiarGuiones(string* dato);
 //post: pone a mayusculas todos los caracteres
 void datoAMayuscula(string* dato);
 
+//pre: recibe un puntero al grafo
+//pos: imprime una lista de todos los aeropuertos del grafo
 void listarAeropuertos(Grafo* ptrGrafo);
+
+//pre: recibe un puntero al grafo
+//pos: llama a la funcion del grafo rutaMinima
+void llamarRutaMinima(Grafo *ptrGrafo);
 
 #endif // FUNCIONES_H_INCLUDED

@@ -58,21 +58,20 @@ void lecturaArchivo(Grafo *ptrGrafo){
 }
 
 
-/*void menu(Grafo *ptrGrafo){
+void menu(Grafo *ptrGrafo){
 
     char i = '1';
     while (i != '0'){
         cout << "Ingrese 0 para cerrar el menu." <<endl;
 		cout << "Ingrese 1 para mostrar el listado de aeropuertos disponibles." <<endl;
 		cout << "Ingrese 2 para buscar la ruta optima entre dos aeropuertos." <<endl;
-		cout << "Ingrese 3 para ver el listado de vuelos disponibles." <<endl;
 		cin >> i;
         cin.ignore(1024, '\n');
         system("cls");
 		opciones(i, ptrGrafo);
     	}
-    */
-/*
+}
+
 void opciones(char i, Grafo *ptrGrafo){
 
     switch (i){
@@ -80,14 +79,12 @@ void opciones(char i, Grafo *ptrGrafo){
             break;
         case '1': listarAeropuertos(ptrGrafo);
             break;
-        case '2': darDeAlta(ptrGrafo);
-            break;
-        case '3': darDeBaja(ptrGrafo);
+        case '2': llamarRutaMinima(ptrGrafo);
             break;
         default: cout << "Dato ingresado invalido" << endl;
         }
     }
-*/
+
 
 
 
@@ -114,4 +111,17 @@ void listarAeropuertos(Grafo* ptrGrafo){
      }
 }
 
+void llamarRutaMinima(Grafo *ptrGrafo){
+string codigoSalida, codigoLlegada, *ptrSalida, *ptrLlegada;
+ptrSalida = &codigoSalida;
+ptrLlegada = &codigoLlegada;
+cout << "Ingrese el codigo IATA del aeropuerto de salida: "<<endl;
+cin >> codigoSalida;
+cout << "Ingrese el codigo IATA del aeropuerto de llegada: "<<endl;
+cin>> codigoLlegada;
+datoAMayuscula(ptrSalida);
+datoAMayuscula(ptrLlegada);
+ptrGrafo->rutaMinima(codigoSalida,codigoLlegada);
+
+}
 

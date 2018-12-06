@@ -8,6 +8,7 @@ int main()
     Grafo grafo;
     Grafo *ptrGrafo=&grafo;
     lecturaArchivo(ptrGrafo);
-    ptrGrafo->rutaMinima("EZE", "OSA");
+    menu(ptrGrafo);
+
 }
 
